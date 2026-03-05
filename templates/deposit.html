@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit Money</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    {% include "side_navbar.html" %}
+    {% include "navbar.html" %}
+    <div class="page-center">
+        <div class="atm-box">
+
+            <h2>Deposit Money</h2>
+
+            <form method="POST">
+                <input type="number" name="amount" placeholder="Enter amount to deposit" min="1" required>
+                <button type="submit">Deposit</button>
+            </form>
+
+            <form action="/menu">
+                <button type="submit">Back to Menu</button>
+            </form>
+
+            {% if message %}
+            <p>{{ message }}</p>
+            {% endif %}
+
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+
+        </div>
+    </div>
+
+</body>
+
+</html>

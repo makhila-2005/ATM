@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ATM Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    {% include "side_navbar.html" %}
+    {% include "navbar.html" %}
+    <div class="page-center">
+        <div class="atm-box">
+
+            <h2>Welcome {{ name }}</h2>
+
+            <form action="/balance">
+                <button type="submit">Check Balance</button>
+            </form>
+
+            <form action="/deposit">
+                <button type="submit">Deposit Money</button>
+            </form>
+
+            <form action="/withdraw">
+                <button type="submit">Withdraw Money</button>
+            </form>
+
+            <form action="/logout">
+                <button type="submit">Logout</button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

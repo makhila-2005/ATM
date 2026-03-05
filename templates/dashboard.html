@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ATM Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    {% include "side_navbar.html" %}
+    {% include "navbar.html" %}
+    <div class="atm-box">
+        <h2>Your Balance</h2>
+
+        <h3>₹ {{ balance }}</h3>
+
+        <form action="/menu">
+            <button type="submit">Back to Menu</button>
+        </form>
+
+        <form action="/logout">
+            <button type="submit">Logout</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
